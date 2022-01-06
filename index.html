@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="header-animation">
+        <h2 id="header" >Typing Test by nathanaeng</h2>
+    </div>
+    <div id="text">
+        <div id="words"></div>
+            <div class="center">
+                <input id="input" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" tabindex="1"/>
+                <button id="redo" onclick="initialize()" tabindex="2"></button>
+    </div>
+    <div class="word-count">
+        <div id="wc" onclick="setWordCount(5)">5</div>
+        <div id="wc" onclick="setWordCount(10)">10</div>
+        <div id="wc" onclick="setWordCount(25)">25</div>
+        <div id="wc" onclick="setWordCount(50)">50</div>
+        <div id="wc" onclick="setWordCount(100)">100</div>
+    </div>
+    <div id="wpm">wpm</div>
+    <div id="accuracy">accuracy</div>
+    <a id="link" href="https://github.com/nathanaeng/typing-test/" target=_blank tabindex="3" onclick="selectInput()">GitHub</a>
+    <script>
+        function selectInput() {
+            document.querySelector('#input').focus();
+        }
+    </script>
+    <script src="main.js";> </script>
+</body>
+</html>

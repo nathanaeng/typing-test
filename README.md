@@ -1,7 +1,7 @@
 # [Typing Test](https://nathanaeng.github.io/typing-test/) in JavaScript
 Over the summer, I made it my goal to learn how to type faster. There are lots of great websites out there (like [10fastfingers](https://10fastfingers.com/), [typingtest.com](https://www.typingtest.com/), and [typings.gg](https://typings.gg/)), but I figured I might as well practice coding at the same time - so I implemented my own typing test! This typing test combines features from each of these websites. Find out how many words per minute you can type!
 
-<a href="#">![](img/webpage.jpg)<a />
+<a>![](img/webpage.jpg)</a>
 
 This project builds upon my [last](https://github.com/nathanaeng/typing-test-CLI) typing test project which is meant to run in the terminal. Unlike that project, this version runs on a website: https://nathanaeng.github.io/typing-test/ (formatted for desktops). This repository contains the source code.
 

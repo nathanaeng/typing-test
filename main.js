@@ -17,37 +17,11 @@ var score;
 
 initialize();
 
-// Updates 'wordCount'
+// Updates 'wordCount' and stores in local storage for preference
 function setWordCount(n) {
-    setCookie('wordCount', n, 30);
+    localStorage.setItem('wordCount', n);
     wordCount = n;
     initialize();
-}
-
-/* Cookie functions adapted from: https://stackoverflow.com/questions/14573223/set-cookie-and-get-cookie-with-javascript */
-// Store number of words in typing test
-function setCookie(name, value, days) {
-    var expires = '';
-    if(days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = 'expires=' + date.toUTCString();
-    }
-    document.cookie = name + '=' + value + ';' + expires + ';path=/';
-}
-
-// Get cookie containing number of words in typing test
-function getCookie(name) {
-    var nameEQ = name + '=';
-    var ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ')
-            c = c.substring(1);
-        if (c.indexOf(nameEQ) == 0)
-            return c.substring(nameEQ.length, c.length);
-    }
-    return null;
 }
 
 // Randomly generates a paragraph of 'wordCount' length
@@ -124,7 +98,7 @@ function initialize() {
     input.className = '';   // remove 'wrong' className
 
     // generate paragraph
-    wordCount = getCookie("wordCount");
+    wordCount = localStorage.getItem("wordCount");
     if(wordCount === null)
         wordCount = 10;
     paragraph = [];
@@ -205,6 +179,7 @@ function scoring() {
     let accuracy = (score / wordCount) * 100;
     let wpm = Math.floor((score/secs) * 60);
     done = true;
+    
     displayScore();
 
     function displayScore() {

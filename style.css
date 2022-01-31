@@ -9,6 +9,7 @@ body {
     place-items: center;
     font-family: Roboto Slab;
     line-height: 3rem;
+    width: 100%;
 }
 
 /* Switch to hand pointer when hovering over REDO */
@@ -18,7 +19,8 @@ body {
 
 .center {
     display: flex;
-    place-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #header {
@@ -66,7 +68,8 @@ body {
 }
 
 #input {
-    width: 770px;
+    max-width: 770px;
+    width: 100%;
     border: solid;
     border-color: rgb(103, 145, 199);
     font: inherit;
@@ -107,35 +110,49 @@ body {
     border: solid rgb(2, 76, 126);
 }
 
-.word-count {
-    float: right;
-    margin-top:0.5em;
-    font-size: 2rem;
-}
-
-#wc {
-    margin-left: 2rem;
-    float: left;
-}
-
-#wc:hover {
-    margin-left: 2rem;
-    float: left;
-    color: rgb(2, 76, 126);
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1rf);
+    grid-template-rows: repeat(2, 1rf);
+    column-gap: 2rem;
 }
 
 #wpm {
     margin-top:0.5em;
     font-size: 2rem;
-    float: left;
+    grid-column: 1;
 }
 
 #accuracy {
     margin-top:0.5em;
     font-size: 2rem;
-    float: left;
-    margin-left: 12rem;
-    position: fixed;
+    grid-column: 2;
+}
+
+#high-score {
+    margin-top:0.5em;
+    font-size: 2rem;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.word-count {
+    grid-column: 3;
+    margin-top: 0.5em;
+    font-size: 2rem;
+}
+
+#wc {
+    grid-column: 2;
+    font-size: 2rem;
+    margin-left: 2rem;
+    /* float: left; */
+}
+
+#wc:hover {
+    margin-left: 2rem;
+    /* float: left; */
+    color: rgb(2, 76, 126);
 }
 
 #link {

@@ -24,7 +24,7 @@ Words typed incorrectly will be not be factored into the WPM calculation.
 
 Accuracy is calculated per word, not per character. Suppose there are 4 words with 20 characters total. Even if you only mistype 1 character, your accuracy will be 75% (3/4) and not 95% (19/20).
 
-The default length of the typing test is 10 words. However, after a person has changed this setting, their most recent choice will be remembered for 30 days.
+The default length of the typing test is 10 words. However, after a person has changed this setting, their most recent choice will be remembered until they clear their cache.
 
 ## Changes From Last Project
 Some quality of life changes have been made since the last project. Some of these are also personal taste.

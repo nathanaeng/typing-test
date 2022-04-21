@@ -26,39 +26,17 @@ function setWordCount(n) {
 
 // Randomly generates a paragraph of 'wordCount' length
 function createParagraph() {
-    // word bank
-    let words = ["a", "at", "an", "any", "another", "ask", "as", "art", "aid", "and", "also", "application", "ancient", "ant",
-                "but", "be", "besides", "brother", "buy", "by", "brought", "bring",
-                "can", "cat", "cowardly", "count", "case", "chair", "clear", "capital", "cloud", "coat", "credit",
-                "direct", "drill", "dog", "down", "do", "drain", "difficult", "ditch", "diet", "does",
-                "ethical", "eye", "eat",
-                "flame", "frog", "flower", "failure", "freedom", "flask", "fox",
-                "goat", "grain", "go", "glad", "gift",
-                "hard", "hail", "happy", "hat", "hit", "he", "him", "her", "his", "hers", "how",
-                "illustrate", "insult", "it", "ill", "in", "I",
-                "jail", "jet", "jab", "jar", "jealous",
-                "know", "kind", "kale", "kid", "knit",
-                "love", "lose", "let", "long", "loan", "list",
-                "mountain", "move", "more", "mouth", "mist", "mile", "metric", "mail", "must",
-                "no", "not", "nice",
-                "of", "oil", "or", "orchestra", "oatmeal", "oak", "original", "official", "open",
-                "princess", "pretty", "polite", "pet", "pillow", "people", "pit", "pile",
-                "quilt", "quiet", "quit", "quite",
-                "read", "random", "red", "row", "rip", "rude", "respect", "run", "robot",
-                "silent", "so", "sat", "sit", "symptom", "sad", "sell", "sick", "slide",
-                "treasure", "treat", "trim", "to", "the", "there", "thus", "their", "talent", "trail",
-                "up", "under", "uncle", "urge", "utilize", "use", "utter", "ultimate", "understand",
-                "violent", "vet", "vampire", "village", "vote", "vile",
-                "wet", "we", "weather", "while", "who", "whim", "walk", "what", "will",
-                "xany",
-                "yes", "yell", "yolk", "yearn", "yet",
-                "zebra", "zip", "zipper", "zeal", "zombie"];
-
-    // create paragraph randomly
-    for(let i = 0; i < wordCount; i++) {
-        paragraph[i] = words[Math.floor(Math.random() * words.length)];
-    }
+    fetch('words.txt')
+    .then(response => response.text())
+    .then(data => {
+        // generate paragraph randomly
+        let words = data.split('\n');
+        for(let i = 0; i < wordCount; i++) {
+            paragraph[i] = words[Math.floor(Math.random() * words.length)];
+        }
     printParagraph();
+    })
+    .catch(err => console.log(err));
 }
 
 // Display paragraph
@@ -100,7 +78,7 @@ function initialize() {
     // generate paragraph
     wordCount = localStorage.getItem("wordCount");
     if(wordCount === null)
-        wordCount = 10;
+        wordCount = 25; // default number of words
     paragraph = [];
     createParagraph();
 

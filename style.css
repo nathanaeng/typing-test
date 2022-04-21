@@ -12,11 +12,6 @@ body {
     width: 100%;
 }
 
-/* Switch to hand pointer when hovering over REDO */
-*[onclick] {
-    cursor: pointer;
-}
-
 .center {
     display: flex;
     justify-content: center;
@@ -65,6 +60,7 @@ body {
     max-width: 900px;
     overflow: hidden;
     font-size: 2rem;
+    word-spacing: 1px;
 }
 
 #input {
@@ -89,25 +85,19 @@ body {
 }
 
 #redo {
-    background: url(https://nathanaeng.github.io/typing-test/images/redo.png) no-repeat;
-    background-position: center;
-    width:60px;
-    height:60px;
+    /* background-color: "#6791c7"; */
+    background-color: #6791c7;
+    width: 60px;
+    height: 60px;
     margin-left: 0.5rem;
     border-radius: 0.5rem;
     border: none;
+    fill: white;
+    cursor: pointer;
 }
 
-#redo:active {
-    background: url(https://nathanaeng.github.io/typing-test/images/redo_press.png) no-repeat;
-    border-radius: 0.5rem;
-    border: none;
-}
-
-#redo:focus, #redo:hover {
-    outline: none;
-    background-position: center;
-    border: solid rgb(2, 76, 126);
+#redo:active, #redo:focus, #redo:hover {
+    background-color: #024c7e;
 }
 
 .score-grid {
@@ -146,12 +136,11 @@ body {
     grid-column: 2;
     font-size: 2rem;
     margin-left: 2rem;
-    /* float: left; */
+    cursor: pointer;
 }
 
 #wc:hover {
     margin-left: 2rem;
-    /* float: left; */
     color: rgb(2, 76, 126);
 }
 

@@ -140,6 +140,7 @@ body {
     position: relative;
     align-self: flex-end;
     width: 100%;
+    bottom: 0;
     height: 20vh;
 }
 
@@ -150,7 +151,7 @@ body {
     text-decoration: none;
     padding: 1rem;
     bottom: 5px;
-    left: 5px;
+    right: 5px;
 }
 
 #link:focus {

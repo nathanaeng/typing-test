@@ -21,6 +21,10 @@ initialize();
 function setWordCount(n) {
     localStorage.setItem('wordCount', n);
     wordCount = n;
+    if(wordCount >= 50)
+        document.querySelector('#words').style.marginTop = '0rem';
+    else
+        document.querySelector('#words').style.marginTop = '5rem';
     initialize();
 }
 
